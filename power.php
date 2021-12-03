@@ -9,4 +9,17 @@ function power($base, $exponent){
 }
 
 // Example: echo power(5,2);
-// This function will only work with a positive exponent.
+
+// Same function using a while loop:
+
+function power($base, $exponent){
+    $result = 1;
+    while($exponent > 0){
+        $exponent--;
+        $result = $result * $base;
+    }
+    return $result;
+}
+echo 3.14 * power(5,2); // Area of a Circle Calculation
+
+// These set of functions will only work with a positive exponent.
