@@ -9,3 +9,4 @@ function power($base, $exponent){
 }
 
 // Example: echo power(5,2);
+// This function will only work with a positive exponent.
