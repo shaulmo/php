@@ -10,7 +10,7 @@ $dataArray = explode(", ", $data);
 
 $total = 0;
 foreach($dataArray as $data){
-    (float)$total += (float)$data + 0;
+    (float)$total += (float)$data;
 }
 
 $result = $total / count($dataArray);
