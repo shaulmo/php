@@ -1,3 +1,4 @@
+<?
 // Creating a Power function in PHP from scratch for learning purposes.
 
 function power($base, $exponent){
