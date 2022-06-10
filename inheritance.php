@@ -13,12 +13,34 @@ class User {
     public function getAttributes(){
         return "<strong>First Name:</strong> $this->firstName<br>
                 <strong>Last Name:</strong> $this->lastName<br>
-                <strong>Username:</strong> $this->userName<hr>";
+                <strong>Username:</strong> $this->userName<hr>
+                ";
     }
 
 }
 
 class Customer extends User {
+    public $city;
+    public $state;
+    public $country;
+
+    public function setLocation($city, $state, $country){
+        $this->city = $city;
+        $this->state = $state;
+        $this->country = $country;
+    }
+
+    public function getLocation(){
+        return "$this->city, $this->state, $this->country";
+    }
+    public function getAttributes(){
+        $location = $this->getLocation();
+        return "<strong>First Name:</strong> $this->firstName<br>
+                <strong>Last Name:</strong> $this->lastName<br>
+                <strong>Username:</strong> $this->userName<br>
+                <strong>Location:</strong> $location<hr>
+                ";
+    }
 }
 
 $u = new User;
@@ -27,7 +49,8 @@ echo $u->getAttributes();
 
 $c = new Customer;
 $c->setAttributes("George", "Constanza", "gconstanza");
-echo $c->getAttributes();
+$c->setLocation("New York", "NY", "USA");
+echo $c->getAttributes() . "<br>";
 
 echo get_parent_class($c) . "<br>";
 
